@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <!-- disable page zooming on phones -->
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <!--when you want to requst the file from the internet use this>
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script-->
+  <script src ="/static/jquery-1.12.3.min.js"></script>
+    <meta charset="utf-8"/>
+    <script type="text/javascript" src="/javas.js"></script>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <title>Robot Controls</title>
+    </head>
+ <body>
+    <div> 
+	<div id="button-background">
+	    <div id="button">
+            <button id = "computergo" onmousedown = "$.get('/go');" onmouseup="$.get('/stop');">GO </button> 
+            <button id= "computerleft" onmousedown = "$.get('/left');" onmouseup="$.get('/stop');">GO Left</button>
+            <button id = "computerright"  onmousedown = "$.get('/right');" onmouseup="$.get('/stop');">GO Right</button>
+            <button id = "computerback" onmousedown = "$.get('/back');" onmouseup="$.get('/stop');">Back</button>
+            
+    </div>
+ </body>
+</html>          

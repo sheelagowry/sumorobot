@@ -1,0 +1,68 @@
+body {
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    background-image: url("/static/mini robot.png");
+
+}
+
+#title {
+    text-align: center;
+    color:purple;
+    font-weight: bold;
+    }
+
+
+
+
+
+ 
+
+    
+#computergo {
+    position: absolute;
+    background: #64066F;
+    color: white;
+    font-family: Arial;
+    font-size: 20px;
+    padding: 15px 20px 10px 20px;
+    text-decoration: none;
+    left: 463px;
+    top: 162px;
+}
+
+#computerleft {
+    position: relative;
+    background: #64066F;
+    color: white;
+    font-family: Arial;
+    font-size: 20px;
+    padding: 15px 20px 10px 20px;
+    text-decoration: none;
+    left: -62px;
+    top: 267px;
+    
+}
+
+#computerright {
+    position: relative;
+    background: #64066F;
+    color: white;
+    font-family: Arial;
+    font-size: 20px;
+    padding: 15px 20px 10px 20px;
+    text-decoration: none;
+    left: 167px;
+    top: 267px;
+}
+
+#computerback {
+    position: relative;
+    background: #64066F;
+    color: white;
+    font-family: Arial;
+    font-size: 20px;
+    padding: 15px 20px 10px 20px;
+    text-decoration: none;
+    left: -134px;
+    top: 375px;
+}
