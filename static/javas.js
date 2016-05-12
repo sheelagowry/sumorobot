@@ -20,3 +20,21 @@ $("html").keydown(function(e) {
     }
     return false;
 });
+
+
+window.networkUpdates = setInterval(function(){ 
+    $.getJSON('/api/wireless', function(data) {
+        $("#networks").empty();
+        $.each(data, function(i, e) {
+            console.info("appending:", e);
+            $("#networks").append("<option>" + e.ssid + "</option>");
+        });
+        console.info(data);
+        $("#ssid").text(ap.Ssid);
+        $("#freq").text(ap.Frequency);
+        $("#strength").text(ap.Strength);
+    });
+}, 1000); 
+
+
+//clearInterval(window.networkUpdates);
