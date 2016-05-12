@@ -3,6 +3,8 @@ from time import sleep
 from threading import Thread
 from flask import Flask, render_template, Response
 import json
+import NetworkManager
+
 
 class MotorThread(Thread):
     # This class generates PWM signal necessary for servo motors
@@ -38,6 +40,18 @@ left.start()
 r2.start()
 
 app = Flask(__name__ )
+
+@app.route("/api/wireless")
+def wireless():
+    networks = []
+    for dev in NetworkManager.NetworkManager.GetDevices():
+        if dev.DeviceType != NetworkManager.NM_DEVICE_TYPE_WIFI:
+            continue
+        for ap in dev.SpecificDevice().GetAccessPoints():
+             networks.append({ "ssid": ap.Ssid, "freq":ap.Frequency, "strength":ord(ap.Strength)})
+             print networks
+        return json.dumps(networks)
+
 
 @app.route("/style.css")
 def css():
@@ -84,5 +98,3 @@ def back():
 if __name__ == '__main__':
     app.run(host = "0.0.0.0", debug = True, threaded = True)
         
-        
-
